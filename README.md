@@ -34,11 +34,13 @@ Ha **VAN admin jog** → Az F8 BÁRHOL működik (Chrome, Notepad, stb.) ✅
 ### Előfeltételek
 
 1. **Python 3.9+** telepítése
-2. **Ollama** telepítése: [ollama.com](https://ollama.com)
-3. **Llama modell** telepítése:
-   ```bash
-   ollama pull llama3.1:8b
-   ```
+2. **Ollama** *(opcionális)* - csak a szövegtisztításhoz és Command Mode-hoz kell:
+   - Telepítés: [ollama.com](https://ollama.com)
+   - Modell letöltése:
+     ```bash
+     ollama pull llama3.1:8b
+     ```
+   - Ollama nélkül az alapvető diktálás teljesen működőképes, egyszerűbb regex-alapú tisztítással.
 
 ### Alkalmazás telepítése
 
@@ -126,7 +128,7 @@ stt:
     language: "hu"
     device: "cpu"       # vagy "cuda"
 
-ollama:
+ollama:  # opcionális - csak szövegtisztításhoz és Command Mode-hoz kell
   host: "http://localhost:11434"
   model: "llama3.1:8b"
 ```
