@@ -1,10 +1,10 @@
 # Kreatív Diktáló 🎤
 
-Intelligens Windows diktáló alkalmazás AssemblyAI/Whisper beszédfelismeréssel és LLM-alapú szövegtisztítással.
+Intelligens Windows diktáló alkalmazás Groq/AssemblyAI/Whisper beszédfelismeréssel és LLM-alapú szövegtisztítással.
 
 ## ✨ Funkciók
 
-- 🎯 **Online vagy Offline** - AssemblyAI (185h/hó ingyen) VAGY helyi Whisper
+- 🎯 **Online vagy Offline** - Groq (ajánlott), AssemblyAI (185h/hó ingyen) VAGY helyi Whisper
 - 🧠 **Intelligens tisztítás** - LLM-alapú töltelékszó-eltávolítás és mondatjavítás
 - ⚡ **Gyors átírás** - Kiváló pontosság magyarul is
 - 🎨 **Modern GUI** - PyQt6-alapú felhasználói felület
@@ -44,7 +44,7 @@ Ha **VAN admin jog** → Az F8 BÁRHOL működik (Chrome, Notepad, stb.) ✅
 
 ```bash
 # Repository klónozása
-git clone https://github.com/yourusername/kreativ-diktalo.git
+git clone https://github.com/kreativoldal/kreativ-diktalo.git
 cd kreativ-diktalo
 
 # Virtuális környezet létrehozása
@@ -57,13 +57,19 @@ pip install -r requirements.txt
 
 ### Speech-to-Text választása
 
-**Opció A: AssemblyAI (Ajánlott magyar nyelvhez) 🏆**
+**Opció A: Groq (Ajánlott) 🏆**
+- Ingyenes API (napi limit)
+- Rendkívül gyors felhő-alapú feldolgozás
+- Kiváló magyar pontosság (Whisper large-v3 modell)
+- Setup: Regisztráció a [console.groq.com](https://console.groq.com) oldalon, API kulcs generálása
+
+**Opció B: AssemblyAI**
 - 185 óra/hónap ingyen
 - Kiváló magyar pontosság
 - Gyors felhő-alapú
 - Setup: Lásd [ASSEMBLYAI_SETUP.md](ASSEMBLYAI_SETUP.md)
 
-**Opció B: Helyi Whisper**
+**Opció C: Helyi Whisper**
 - Teljesen offline
 - Ingyenes, korlátlan használat
 - Lassabb, kevésbé pontos magyarul
@@ -105,10 +111,14 @@ hotkeys:
   command_mode: "Ctrl+Shift+Space"
 
 stt:
-  provider: "assemblyai"  # "assemblyai" vagy "whisper"
+  provider: "groq"  # "groq", "assemblyai" vagy "whisper"
+
+  groq:
+    api_key: "YOUR_GROQ_API_KEY"  # console.groq.com
+    language: "hu"
 
   assemblyai:
-    api_key: "YOUR_API_KEY"  # Lásd ASSEMBLYAI_SETUP.md
+    api_key: "YOUR_ASSEMBLYAI_API_KEY"  # Lásd ASSEMBLYAI_SETUP.md
     language: "hu"
 
   whisper:
