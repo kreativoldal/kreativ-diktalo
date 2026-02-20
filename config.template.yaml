@@ -1,0 +1,86 @@
+audio:
+  channels: 1
+  chunk_size: 1024
+  sample_rate: 16000
+  silence_duration: 1.5
+  silence_threshold: 2.0
+  vad_enabled: true
+command_mode:
+  default_commands:
+  - name: Barátságosabbá tétel
+    prompt: Írd át a szöveget barátságosabb, melegebb hangnemben
+    trigger: barátságos
+  - name: Fordítás angolra
+    prompt: Fordítsd le a szöveget angolra
+    trigger: fordítsd angol
+  - name: Rövidítés
+    prompt: Rövidítsd le a szöveget, tartsd meg a lényeget
+    trigger: rövidítsd
+  - name: Helyesírás javítás
+    prompt: Javítsd ki a helyesírási és nyelvtani hibákat
+    trigger: javítsd
+  - name: Listává alakítás
+    prompt: Alakítsd át a szöveget pontokba szedett listává
+    trigger: lista
+  enabled: true
+developer:
+  audio_debug_path: data/debug/
+  debug_mode: false
+  save_audio_files: false
+hotkeys:
+  command_mode: ctrl+shift+space
+  dictation: F8
+keyboard:
+  delay_before_type: 0.1
+  paste_mode: true
+  typing_speed: 0.01
+logging:
+  backup_count: 5
+  file_path: data/logs/app.log
+  level: INFO
+  max_file_size: 10485760
+ollama:
+  host: http://localhost:11434
+  model: llama3.1:8b
+  temperature: 0.3
+  timeout: 30
+  top_k: 40
+  top_p: 0.9
+performance:
+  enable_caching: true
+  max_audio_length: 300
+  whisper_threads: 4
+storage:
+  auto_export: false
+  database_path: data/dictations.db
+  export_format: json
+  keep_history_days: 90
+stt:
+  assemblyai:
+    api_key: YOUR_ASSEMBLYAI_API_KEY_HERE
+    language: hu
+  groq:
+    api_key: YOUR_GROQ_API_KEY_HERE
+    language: hu
+  provider: groq
+  whisper:
+    beam_size: 5
+    best_of: 5
+    compute_type: int8
+    device: cpu
+    language: hu
+    model: small
+    temperature: 0.0
+text_processing:
+  cleaning_mode: llm
+  enable_cleaning: false
+  fallback_to_regex: true
+ui:
+  language: hu
+  minimize_to_tray: true
+  show_notifications: true
+  show_preview: true
+  start_minimized: false
+  theme: dark
+  window_height: 700
+  window_width: 900

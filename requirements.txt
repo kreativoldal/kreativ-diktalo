@@ -1,0 +1,38 @@
+# Core Dependencies
+torch>=2.1.0
+torchaudio>=2.1.0
+
+# Speech-to-Text Providers
+groq>=1.0.0                     # Groq Whisper (WISPR FLOW! <1s, 14,400 min/nap)
+faster-whisper>=1.0.0           # Helyi Whisper (4-5x gyorsabb)
+assemblyai>=0.52.0              # Online API (lassú, 185 óra/hó)
+
+# Ollama Integration
+ollama>=0.1.0
+
+# Audio Processing
+sounddevice>=0.4.6
+soundfile>=0.12.0               # WAV fájl írás/olvasás
+numpy>=1.24.0
+scipy>=1.11.0
+
+# GUI Framework
+PyQt6>=6.6.0
+PyQt6-Qt6>=6.6.0
+
+# Input Control
+keyboard>=0.13.5  # Jobb Windows globális hotkey támogatás
+pynput>=1.7.6     # Backup/fallback
+PyAutoGUI>=0.9.54
+
+# Configuration & Storage
+PyYAML>=6.0.1
+python-dotenv>=1.0.0
+
+# Utilities
+pyperclip>=1.8.2
+
+# Development
+pytest>=7.4.0
+pytest-qt>=4.2.0
+black>=23.0.0
